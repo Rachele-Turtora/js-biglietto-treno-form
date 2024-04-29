@@ -32,21 +32,21 @@ element.addEventListener("click", function(event) {
             // Calculating discount
             if (age === "minorenne") {
                 price = (price * (100 - discountUnder)) / 100;
-                ticketOffer.innerHTML += "Offerta minorenni"
+                ticketOffer.innerHTML = "Offerta minorenni"
             } else if (age === "over-65") {
                 price = (price * (100 - discountOver)) / 100;
-                ticketOffer.innerHTML += "Offerta over-65"
+                ticketOffer.innerHTML = "Offerta over-65"
             } else {
-                ticketOffer.innerHTML += "Offerta standard"
+                ticketOffer.innerHTML = "Offerta standard"
             }
 
             price = price.toFixed(2);
 
             // Printing the ticket
-            ticketName.innerHTML += name
-            ticketCab.innerHTML += Math.ceil(Math.random() * 9);
-            ticketCp.innerHTML += Math.ceil(Math.random() * 150) + 1000;
-            ticketPrice.innerHTML += price + "€";
+            ticketName.innerHTML = name
+            ticketCab.innerHTML = Math.ceil(Math.random() * 9);
+            ticketCp.innerHTML = Math.ceil(Math.random() * 150) + 1000;
+            ticketPrice.innerHTML = price + "€";
 
             document.getElementById("ticket").classList.remove("d-none");
             document.getElementById("ticket").classList.add("d-block");
