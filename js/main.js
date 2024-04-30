@@ -1,13 +1,13 @@
 "use strict"
 
-const element = document.getElementById("send");
-element.addEventListener("click", function(event) {
+const generateTicket = document.getElementById("form");
+generateTicket.addEventListener("submit", function(event) {
     event.preventDefault();
 
     // Asking name, km and age
-    let name = document.getElementById("userName").value;
-    let km = document.getElementById("userKm").value;
-    let age = document.getElementById("userAge").value;
+    const name = document.getElementById("user-name").value;
+    let km = document.getElementById("user-km").value;
+    const age = document.getElementById("user-age").value;
 
     const priceKm = 0.21;
 
@@ -15,13 +15,13 @@ element.addEventListener("click", function(event) {
 
         km = Number(km);
 
-        if ((!isNaN(km) && isNaN(name)) && km > 0 ) {
+        if (isNaN(name) && km > 0 ) {
 
-            let ticketName = document.querySelector(".ticket-name");
-            let ticketCab = document.querySelector(".ticket-cab");
-            let ticketCp = document.querySelector(".ticket-cp");
-            let ticketPrice = document.querySelector(".ticket-price");
-            let ticketOffer = document.querySelector(".ticket-offer");
+            const ticketName = document.querySelector(".ticket-name");
+            const ticketCab = document.querySelector(".ticket-cab");
+            const ticketCp = document.querySelector(".ticket-cp");
+            const ticketPrice = document.querySelector(".ticket-price");
+            const ticketOffer = document.querySelector(".ticket-offer");
             
             // Calculating the standard price
             let price = km * priceKm;
@@ -30,10 +30,10 @@ element.addEventListener("click", function(event) {
             const discountOver = 40;
 
             // Calculating discount
-            if (age === "minorenne") {
+            if (age === "under") {
                 price = (price * (100 - discountUnder)) / 100;
                 ticketOffer.innerHTML = "Offerta minorenni"
-            } else if (age === "over-65") {
+            } else if (age === "over") {
                 price = (price * (100 - discountOver)) / 100;
                 ticketOffer.innerHTML = "Offerta over-65"
             } else {
@@ -43,13 +43,12 @@ element.addEventListener("click", function(event) {
             price = price.toFixed(2);
 
             // Printing the ticket
-            ticketName.innerHTML = name
+            ticketName.innerHTML = name[0].toUpperCase() + name.substring(1);
             ticketCab.innerHTML = Math.ceil(Math.random() * 9);
             ticketCp.innerHTML = Math.ceil(Math.random() * 150) + 1000;
             ticketPrice.innerHTML = price + "€";
 
             document.getElementById("ticket").classList.remove("d-none");
-            document.getElementById("ticket").classList.add("d-block");
 
         } else {
 
@@ -65,8 +64,6 @@ element.addEventListener("click", function(event) {
 
 const removeElement = document.getElementById("cancel");
 removeElement.addEventListener("click", function() {
-    document.getElementById("form").reset();
-    document.getElementById("ticket").classList.remove("d-block");
     document.getElementById("ticket").classList.add("d-none");
 })
 

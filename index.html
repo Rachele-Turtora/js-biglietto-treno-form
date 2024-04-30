@@ -16,25 +16,25 @@
                 <div class="row justify-content-center p-4">
                     <div class="col-3 text-center">
                         <h3 class="text-primary mb-3">Nome e Cognome</h3>
-                        <input type="text" class="border border-primary rounded fs-4 text-center" id="userName">
+                        <input type="text" class="border border-primary rounded fs-4 text-center" id="user-name">
                     </div>
                     <div class="col-3 text-center">
                         <h3 class="text-primary mb-3">Km da percorrere</h3>
-                        <input type="text" class="border border-primary rounded fs-4 text-center" id="userKm">
+                        <input type="number" class="border border-primary rounded fs-4 text-center" id="user-km">
                     </div>
                     <div class="col-3 text-center">
                         <h3 class="text-primary mb-3">Fascia d'età</h3>
-                        <select name="age" class="border border-primary rounded fs-4" id="userAge">
-                            <option value="minorenne">Minorenne</option>
-                            <option value="maggiorenne">Maggiorenne</option>
-                            <option value="over-65">over 65</option>
+                        <select name="age" class="border border-primary rounded fs-4" id="user-age">
+                            <option value="under">Minorenne</option>
+                            <option value="standard">Maggiorenne</option>
+                            <option value="over">over 65</option>
                         </select>
                     </div>
                 </div>
                 
                 <div class="text-center">
                     <button class="my-4 mx-2 border border-primary rounded p-2 text-primary fs-4 fw-semibold" id="send">Genera</button>
-                    <button class="my-4 mx-2 border border-primary rounded p-2 text-primary fs-4 fw-semibold" id="cancel">Annulla</button>
+                    <button type="reset" class="my-4 mx-2 border border-primary rounded p-2 text-primary fs-4 fw-semibold" id="cancel">Annulla</button>
                 </div>
             </form>
         </div>

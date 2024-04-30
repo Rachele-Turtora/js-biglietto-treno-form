@@ -1,6 +1,8 @@
-- creo due campi di input per l'età e i km
+- creo due campi di input per il nome e i km
+- creo un campo select per l'età
 
 - creo un bottone per prendere i valori degli input e stampare il risultato in console
+- creo un bottone per resettare 
 
 - se la lunghezza degli input è > 0:
     - se gli input sono interi > 0:
